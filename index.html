@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebStudio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/modern-normalize/modern-normalize.css">
+    <link rel="stylesheet" href="style/style.css"/>
+  <title>Ferma</title>
+</head>
+<body>
+<div class="container_button">
+<button onclick="openModal('productivitate')" class="button">Productivitate</button>
+<button onclick="openModal('animale')" class="button">Animale</button>
+<button onclick="openModal('stock')" class="button">Stock Produse</button>
+<button onclick="openModal('utilaje')" class="button">Utilaje</button>
+<button onclick="openModal('personal')" class="button">Personal</button>
+<button onclick="openModal('provizionari')" class="button">Provizionări</button>
+<button onclick="openModal('meteo')" class="button">Meteo</button>
+</div>
+
+<!-- productivitate -->
+<div id="productivitateModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('productivitate')">&times;</span>
+      <h2>Productivitate</h2>
+      <form onsubmit="salveazaProductivitate(); return false;">
+        <input type="date" id="dataProductivitate" placeholder="Data">
+        <input type="text" id="produsProductivitate" placeholder="Produs">
+        <input type="number" id="cantitateProductivitate" placeholder="Cantitate">
+        <button type="button" onclick="salveazaProductivitate()">Salvează</button>
+      </form>
+      <table id="productivitateTable">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Produs</th>
+            <th>Cantitate</th>
+          </tr>
+        </thead>
+        <tbody id="productivitateTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- animale -->
+<div id="animaleModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('animale')">&times;</span>
+      <h2>Animale</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataAnimale"></td>
+          <td><input type="text" id="produsAnimale"></td>
+          <td><input type="number" id="cantitateAnimale"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaAnimale()">Salvează</button>
+    </div>
+  </div>
+<!-- stock produse -->
+<div id="stockModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('stock')">&times;</span>
+      <h2>stock</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataStock"></td>
+          <td><input type="text" id="produsStock"></td>
+          <td><input type="number" id="cantitateStock"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaStock()">Salvează</button>
+    </div>
+  </div>
+<!-- utilaje -->
+<div id="utilajeModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('utilaje')">&times;</span>
+      <h2>utilaje</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataUtilaje"></td>
+          <td><input type="text" id="produsUtilaje"></td>
+          <td><input type="number" id="cantitateUtilaje"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaUtilaje()">Salvează</button>
+    </div>
+  </div>
+<!-- personal -->
+<div id="personalModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('personal')">&times;</span>
+      <h2>personal</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataPersonal"></td>
+          <td><input type="text" id="produsPersonal"></td>
+          <td><input type="number" id="cantitatePersonal"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaPersonal()">Salvează</button>
+    </div>
+  </div>
+<!-- provizionari -->
+<div id="provizionariModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('provizionari')">&times;</span>
+      <h2>provizionari</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataProvizionari"></td>
+          <td><input type="text" id="produsProvizionari"></td>
+          <td><input type="number" id="cantitateProvizionari"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaProvizionari()">Salvează</button>
+    </div>
+  </div>
+<!-- meteo -->
+<div id="meteoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('meteo')">&times;</span>
+      <h2>meteo</h2>
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Produs</th>
+          <th>Cantitate</th>
+        </tr>
+        <tr>
+          <td><input type="date" id="dataMeteo"></td>
+          <td><input type="text" id="produsMeteo"></td>
+          <td><input type="number" id="cantitateMeteo"></td>
+        </tr>
+      </table>
+      <button onclick="salveazaMeteo()">Salvează</button>
+    </div>
+  </div>
+
+<script src="./js/modal.js"></script>
+
+</body>
+</html>
